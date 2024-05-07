@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "LQtRtzZOyh77MwmEWQ/hZ00z8a9njdw5oTTm/4ewgR52dqqhr1E1hupaFNzDKpULkO8zP9/5x2xE+u+OdspyYQ==",
+  "success": true,
+  "projectFilePath": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Traveleate-Back-C#.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\camug\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\camug\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\camug\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\camug\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\camug\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\camug\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
