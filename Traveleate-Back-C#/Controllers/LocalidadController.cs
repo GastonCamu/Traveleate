@@ -52,5 +52,23 @@ namespace Traveleate_Back_C_.Controllers
 
             return _response;
         }
+
+        [HttpPost]
+        public ResponseDto CrearLocalidad([FromBody] Localidad localidad)
+        {
+            try
+            {
+                _context.Localidades.Add(localidad);
+                _context.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.Message= ex.Message;
+            }
+
+            return _response;
+        }
     }
 }
