@@ -61,7 +61,7 @@ namespace Traveleate_Back_C_.Migrations
                 {
                     IdLocalidad = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    nombreLocalidad = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    NombreLocalidad = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -77,7 +77,7 @@ namespace Traveleate_Back_C_.Migrations
                     NombreCliente = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ApellidoCliente = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DNICliente = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FechaNacimiento = table.Column<DateOnly>(type: "date", nullable: false),
+                    MayorEdad = table.Column<bool>(type: "bit", nullable: false),
                     IdButaca = table.Column<int>(type: "int", nullable: false),
                     IdViaje = table.Column<int>(type: "int", nullable: false),
                     PrecioTotal = table.Column<decimal>(type: "decimal(18,2)", nullable: false)

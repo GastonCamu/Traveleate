@@ -33,6 +33,7 @@ namespace Traveleate_Back_C_.Controllers
                     v.IdLocalidadDestino == localidadDestinoEntity.IdLocalidad &&
                     v.Fecha.Date == fecha.Date
                 )
+                .OrderBy(v => v.Fecha)
                 .Select(v => new
                 {
                     IdViaje = v.IdViaje,

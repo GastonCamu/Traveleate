@@ -1,5 +1,5 @@
 export interface IViaje {
-    id:              number;
+    idViaje:              number;
     localidadOrigen: string;
     localidadDestino: string;
     fecha: Date;

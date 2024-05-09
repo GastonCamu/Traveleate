@@ -35,7 +35,10 @@ export class ViajesComponent implements OnInit {
     })
   }
 
-  constructor(private router:Router) {
+  constructor(private router:Router) {}
+
+  reservar(viaje:IViaje) {
+    this.router.navigate(['/reservar',viaje.idViaje]);
   }
 
   ngOnInit(): void {

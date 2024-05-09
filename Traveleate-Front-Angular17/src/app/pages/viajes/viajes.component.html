@@ -29,7 +29,7 @@
     <ng-container matColumnDef="accion">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element">
-            <button>Reservar</button>
+            <button (click)="reservar(element)">Reservar</button>
         </td>
       </ng-container>
   

@@ -14,7 +14,7 @@ namespace Traveleate_Back_C_.Models
         [Required]
         public string? DNICliente { get; set; }
         [Required]
-        public DateOnly FechaNacimiento { get; set; }
+        public bool MayorEdad { get; set; } = false;
         [ForeignKey("Butaca")]
         public int IdButaca { get; set; }
         [ForeignKey("Viaje")]

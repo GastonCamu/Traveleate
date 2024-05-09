@@ -12,7 +12,7 @@ using Traveleate_Back_C_.Data;
 namespace Traveleate_Back_C_.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240507234200_InitDB")]
+    [Migration("20240509203859_InitDB")]
     partial class InitDB
     {
         /// <inheritdoc />
@@ -98,7 +98,7 @@ namespace Traveleate_Back_C_.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdLocalidad"));
 
-                    b.Property<string>("nombreLocalidad")
+                    b.Property<string>("NombreLocalidad")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -123,14 +123,14 @@ namespace Traveleate_Back_C_.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateOnly>("FechaNacimiento")
-                        .HasColumnType("date");
-
                     b.Property<int>("IdButaca")
                         .HasColumnType("int");
 
                     b.Property<int>("IdViaje")
                         .HasColumnType("int");
+
+                    b.Property<bool>("MayorEdad")
+                        .HasColumnType("bit");
 
                     b.Property<string>("NombreCliente")
                         .IsRequired()
