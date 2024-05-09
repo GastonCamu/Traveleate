@@ -1,0 +1,36 @@
+<form>
+    <label>Lugar Origen</label>
+    <input
+        type="text"
+        [formControl]="control"
+        [matAutocomplete]="auto"
+        #localidadOrigen
+    >
+    <mat-autocomplete #auto="matAutocomplete">
+      @for (street of filteredStreets | async; track street) {
+        <mat-option [value]="street">{{street}}</mat-option>
+      }
+    </mat-autocomplete>
+    <label>Lugar Destino</label>
+    <input
+        type="text"
+        [formControl]="control"
+        [matAutocomplete]="auto"
+        #localidadDestino
+    >
+    <mat-autocomplete #auto="matAutocomplete">
+      @for (street of filteredStreets | async; track street) {
+        <mat-option [value]="street">{{street}}</mat-option>
+      }
+    </mat-autocomplete>
+    <label>Fecha:</label>
+    <input 
+    type="date"
+    name="fecha"
+    #fecha
+    >
+
+    <button (click)="buscar(localidadDestino.value,localidadOrigen.value,fecha.value)" >Buscar</button>
+  </form>
+  
+  

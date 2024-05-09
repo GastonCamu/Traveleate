@@ -13,7 +13,7 @@ export class LocalidadService {
 
   constructor() { }
 
-  obtenerLocalidades(id:number) {
-    return this.http.get<ResponseAPI>(`${this.apiUrl}/${id}`);
+  obtenerLocalidades() {
+    return this.http.get<ResponseAPI>(this.apiUrl);
   }
 }
