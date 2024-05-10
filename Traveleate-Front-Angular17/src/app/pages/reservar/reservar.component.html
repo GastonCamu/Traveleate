@@ -1,15 +1,26 @@
 <div>
-    <form>
-        <label>Nombre</label>
-        <input type="text">
+    <form [formGroup]="formReserva" class="formReserva">
 
-        <label>Apellido</label>
-        <input type="text">
+        <div>
+            <label>Nombre</label>
+            <input type="text" formControlName="nombre">
+        </div>
 
-        <label>DNI</label>
-        <input type="text">
+        <div>
+            <label>Apellido</label>
+            <input type="text" formControlName="apellido">
+        </div>
 
-        <label>¿Tenes mas de 18 años?</label>
-        <input type="checkbox">
+        <div>
+            <label>DNI (sin puntos)</label>
+            <input type="text" formControlName="dni">
+        </div>
+
+        <div>        
+            <label>¿Tenes mas de 18 años?</label>
+            <input type="checkbox" formControlName="mayorEdad">
+        </div>
+
+        <button (click)="Reservar()"></button>
     </form>
 </div>

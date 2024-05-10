@@ -6,15 +6,14 @@ import { ResponseAPI } from '../models/responseAPI';
 @Injectable({
   providedIn: 'root'
 })
-export class ButacaService {
+export class CategoriaButacaService {
 
   private http = inject(HttpClient);
-  private apiUrl: string = appsettings.apiUrl + "Butaca";
+  private apiUrl: string = appsettings.apiUrl + "CategoriaButaca";
 
   constructor() { }
 
-  obtenerButaca(id: number) {
+  obtenerCategoriaButaca(id: number) {
     return this.http.get<ResponseAPI>(`${this.apiUrl}/${id}`);
   }
-
 }

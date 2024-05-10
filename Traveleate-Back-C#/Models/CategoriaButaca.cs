@@ -7,6 +7,6 @@ namespace Traveleate_Back_C_.Models
         [Key]
         public int IdCategoriaButaca { get; set; }
         public string Categoria { get; set; }
-        public decimal Precio { get; set; }
+        public int Precio { get; set; }
     }
 }

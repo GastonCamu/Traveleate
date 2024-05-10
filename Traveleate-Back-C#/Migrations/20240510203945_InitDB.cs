@@ -17,9 +17,7 @@ namespace Traveleate_Back_C_.Migrations
                 {
                     IdButaca = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IdCategoriaButaca = table.Column<int>(type: "int", nullable: false),
-                    reservada = table.Column<bool>(type: "bit", nullable: false),
-                    IdColectivo = table.Column<int>(type: "int", nullable: false)
+                    IdCategoriaButaca = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -33,7 +31,7 @@ namespace Traveleate_Back_C_.Migrations
                     IdCategoriaButaca = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Categoria = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Precio = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    Precio = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -95,7 +93,9 @@ namespace Traveleate_Back_C_.Migrations
                     IdLocalidadOrigen = table.Column<int>(type: "int", nullable: false),
                     IdLocalidadDestino = table.Column<int>(type: "int", nullable: false),
                     Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IdColectivo = table.Column<int>(type: "int", nullable: false)
+                    IdColectivo = table.Column<int>(type: "int", nullable: false),
+                    ButacaReservadas = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Precio = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

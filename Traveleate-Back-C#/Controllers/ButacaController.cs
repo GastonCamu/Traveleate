@@ -36,6 +36,23 @@ namespace Traveleate_Back_C_.Controllers
             return _response;
         }
 
+        [HttpGet("{idButaca}")]
+        public ResponseDto ObtenerButaca(int idButaca)
+        {
+            try
+            {
+                var butaca = _context.Butacas.FirstOrDefault(b => b.IdButaca == idButaca);
+                _response.Data = butaca;
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.Message = ex.Message;
+            }
+
+            return _response;
+        }
+
         [HttpPost]
         public ResponseDto CrearButaca([FromBody] Butaca butaca)
         {

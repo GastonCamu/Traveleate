@@ -13,5 +13,6 @@ namespace Traveleate_Back_C_.Data
         public DbSet<Localidad> Localidades { get; set; }
         public DbSet<Reserva> Reservas { get; set; }
         public DbSet<Viaje> Viajes { get; set; }
+
     }
 }

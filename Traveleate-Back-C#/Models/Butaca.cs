@@ -10,9 +10,5 @@ namespace Traveleate_Back_C_.Models
 
         [ForeignKey("CategoriaButaca")]
         public int IdCategoriaButaca { get; set; }
-        public bool reservada { get; set; } = false;
-
-        [ForeignKey("Colectivo")]
-        public int IdColectivo { get; set; }
     }
 }

@@ -4,4 +4,5 @@ export interface IViaje {
     localidadDestino: string;
     fecha: Date;
     idColectivo: number;
+    precioViaje: number;
 }

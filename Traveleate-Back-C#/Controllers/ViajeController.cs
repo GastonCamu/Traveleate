@@ -40,7 +40,8 @@ namespace Traveleate_Back_C_.Controllers
                     LocalidadOrigen = localidadOrigen,
                     LocalidadDestino = localidadDestino,
                     Fecha = v.Fecha,
-                    IdColectivo = v.IdColectivo
+                    IdColectivo = v.IdColectivo,
+                    PrecioViaje = v.Precio,
                 })
                 .ToList();
 

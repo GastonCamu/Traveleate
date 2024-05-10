@@ -13,7 +13,7 @@ export class ColectivoService {
 
   constructor() { }
 
-  obtenerCantButacas() {
-    return this.http.get<ResponseAPI>(this.apiUrl);
+  obtenerCantButacas(id:number) {
+    return this.http.get<ResponseAPI>(`${this.apiUrl}/${id}`);
   }
 }
