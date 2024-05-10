@@ -12,10 +12,14 @@ export class ReservarComponent implements OnInit {
 
   @Input('id')idViaje! : number;
 
+  obtenerCantButacas() {
+    
+  }
+
   constructor(private router:Router) {}
 
   ngOnInit(): void {
-    console.log("La id de viaje es: ",this.idViaje)
+    
   }
 
 

@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|d:\\proyectos\\transporte\\traveleate\\traveleate-back-c#\\controllers\\butacacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|solutionrelative:controllers\\butacacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|d:\\proyectos\\transporte\\traveleate\\traveleate-back-c#\\controllers\\reservacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|solutionrelative:controllers\\reservacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|d:\\proyectos\\transporte\\traveleate\\traveleate-back-c#\\models\\butaca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|solutionrelative:models\\butaca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|d:\\proyectos\\transporte\\traveleate\\traveleate-back-c#\\models\\reserva.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|solutionrelative:models\\reserva.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|d:\\proyectos\\transporte\\traveleate\\traveleate-back-c#\\controllers\\colectivocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|solutionrelative:controllers\\colectivocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|d:\\proyectos\\transporte\\traveleate\\traveleate-back-c#\\controllers\\viajecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|solutionrelative:controllers\\viajecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|d:\\proyectos\\transporte\\traveleate\\traveleate-back-c#\\controllers\\localidadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|solutionrelative:controllers\\localidadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|d:\\proyectos\\transporte\\traveleate\\traveleate-back-c#\\models\\viaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|solutionrelative:models\\viaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|d:\\proyectos\\transporte\\traveleate\\traveleate-back-c#\\models\\colectivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB8FC0A4-25F0-4C47-A67A-C5CF724E07F9}|Traveleate-Back-C#.csproj|solutionrelative:models\\colectivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,48 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "LocalidadController.cs",
-              "DocumentMoniker": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Controllers\\LocalidadController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LocalidadController.cs",
-              "ToolTip": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Controllers\\LocalidadController.cs",
-              "RelativeToolTip": "Controllers\\LocalidadController.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAAAQAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T14:34:38.366Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ButacaController.cs",
-              "DocumentMoniker": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Controllers\\ButacaController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ButacaController.cs",
-              "ToolTip": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Controllers\\ButacaController.cs",
-              "RelativeToolTip": "Controllers\\ButacaController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T20:51:42.821Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReservaController.cs",
-              "DocumentMoniker": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Controllers\\ReservaController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ReservaController.cs",
-              "ToolTip": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Controllers\\ReservaController.cs",
-              "RelativeToolTip": "Controllers\\ReservaController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T20:51:24.042Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -106,66 +42,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Butaca.cs",
-              "DocumentMoniker": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Models\\Butaca.cs",
-              "RelativeDocumentMoniker": "Models\\Butaca.cs",
-              "ToolTip": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Models\\Butaca.cs",
-              "RelativeToolTip": "Models\\Butaca.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T20:49:59.288Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Reserva.cs",
-              "DocumentMoniker": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Models\\Reserva.cs",
-              "RelativeDocumentMoniker": "Models\\Reserva.cs",
-              "ToolTip": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Models\\Reserva.cs",
-              "RelativeToolTip": "Models\\Reserva.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBAAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T19:52:52.692Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "ViajeController.cs",
               "DocumentMoniker": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Controllers\\ViajeController.cs",
               "RelativeDocumentMoniker": "Controllers\\ViajeController.cs",
               "ToolTip": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Controllers\\ViajeController.cs",
               "RelativeToolTip": "Controllers\\ViajeController.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwCAAAABRAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T18:20:31.962Z",
+              "WhenOpened": "2024-05-10T01:58:50.748Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Colectivo.cs",
-              "DocumentMoniker": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Models\\Colectivo.cs",
-              "RelativeDocumentMoniker": "Models\\Colectivo.cs",
-              "ToolTip": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Models\\Colectivo.cs",
-              "RelativeToolTip": "Models\\Colectivo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "ColectivoController.cs",
+              "DocumentMoniker": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Controllers\\ColectivoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ColectivoController.cs",
+              "ToolTip": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Controllers\\ColectivoController.cs",
+              "RelativeToolTip": "Controllers\\ColectivoController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAcwCQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T14:21:11.982Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Viaje.cs",
-              "DocumentMoniker": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Models\\Viaje.cs",
-              "RelativeDocumentMoniker": "Models\\Viaje.cs",
-              "ToolTip": "D:\\Proyectos\\Transporte\\Traveleate\\Traveleate-Back-C#\\Models\\Viaje.cs",
-              "RelativeToolTip": "Models\\Viaje.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T14:12:30.762Z"
+              "WhenOpened": "2024-05-10T01:53:13.388Z",
+              "EditorCaption": ""
             }
           ]
         }

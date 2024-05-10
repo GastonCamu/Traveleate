@@ -18,7 +18,8 @@ namespace Traveleate_Back_C_.Migrations
                     IdButaca = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IdCategoriaButaca = table.Column<int>(type: "int", nullable: false),
-                    reservada = table.Column<bool>(type: "bit", nullable: false)
+                    reservada = table.Column<bool>(type: "bit", nullable: false),
+                    IdColectivo = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -46,9 +47,7 @@ namespace Traveleate_Back_C_.Migrations
                     IdColectivo = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Matricula = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ButacasReservadas = table.Column<int>(type: "int", nullable: false),
-                    TotalButacas = table.Column<int>(type: "int", nullable: false),
-                    completo = table.Column<bool>(type: "bit", nullable: false)
+                    TotalButacas = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
