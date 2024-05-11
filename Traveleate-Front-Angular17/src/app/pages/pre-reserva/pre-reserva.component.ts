@@ -27,23 +27,24 @@ export class PreReservaComponent implements OnInit {
   @Input('precioViaje')precioViaje! : number;
 
   totalButacas! : number;
-  butacas: any[] = [];
+  butacas: IButaca[] = [];
   butaca! : IButaca;
   categoriaButaca! : ICategoriaButaca;
   ButacasReservadas! : number[];
+  coincidencia : boolean = false;
+  butacaSeleccionada! : number;
 
-  obtenerListabutacasReservadas() {
+  obtenerListaButacasReservadas() {
     this.viajeService.obtenerButacasReservadas(this.idViaje).subscribe({
       next:(res)=>{
         this.ButacasReservadas = res.data;
-        console.log(this.ButacasReservadas);
       },
       error:(err)=>{
         console.log(err.message);
       }
     });
   }
-
+  
   obtenerCantButacas() {
     this.colectivoService.obtenerCantButacas(this.idColectivo).subscribe({
       next:(res)=>{
@@ -51,10 +52,6 @@ export class PreReservaComponent implements OnInit {
         this.butacas = Array(this.totalButacas).fill(0);
       }
     })
-  }
-
-  enviarReserva() {
-    this.router.navigate(['/reservar',this.idViaje,this.idColectivo,this.precioViaje,this.butaca.idButaca,this.categoriaButaca.precio]);
   }
 
   obtenerButaca(idButaca: number) {
@@ -79,16 +76,40 @@ export class PreReservaComponent implements OnInit {
       }
     })
   }
-  
-  elegirButaca(idButaca: number) {
-    this.obtenerButaca(idButaca);
+
+  elegirButaca(butacaSeleccionada: number) {
+    this.butacaSeleccionada = butacaSeleccionada;
+    this.obtenerButaca(butacaSeleccionada);
   }
-
-
+  
   constructor(private router:Router) {}
 
   ngOnInit(): void {
     this.obtenerCantButacas();
-    this.obtenerListabutacasReservadas();
+    this.obtenerListaButacasReservadas();
   }
+
+  enviarReserva() {
+    this.validacionReserva(this.butacaSeleccionada);
+    if (this.coincidencia) {
+      alert("La butaca ya fue reservada");
+      this.router.navigate(['/']);
+    }
+    else {
+      this.router.navigate(['/reservar',this.idViaje,this.idColectivo,this.precioViaje,this.butaca.idButaca,this.categoriaButaca.precio]);
+    }
+  }
+
+  Volver() {
+    this.router.navigate(['/']);
+  }
+
+  validacionReserva(idButaca: number) {
+    this.ButacasReservadas.forEach(nroButaca => {
+      if(nroButaca == idButaca) {
+        this.coincidencia = true;
+      }
+    })
+  }
+
 }

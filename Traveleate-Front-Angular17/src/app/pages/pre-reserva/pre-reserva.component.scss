@@ -12,5 +12,12 @@ div.colectivo {
         height: 2vw;
         text-align: center;
         background-color: white;
+
+        button.reservada {
+            background-color: red;
+            pointer-events: none;
+            color: black;
+        }
     }
+
 }

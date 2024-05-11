@@ -36,8 +36,7 @@ export class ReservarComponent implements OnInit{
     idButaca: [0],
     idViaje: [0],
     precioTotal: [0]
-
-  })
+  });
 
   Reservar() {
     console.log(this.precioTotal)
@@ -62,9 +61,9 @@ export class ReservarComponent implements OnInit{
         console.log(err.message);
       }
     });
-
   }
 
+  
   ReservarButaca() {
     this.viajeService.GuardarButaca(this.idViaje, this.idButaca).subscribe({});
   }

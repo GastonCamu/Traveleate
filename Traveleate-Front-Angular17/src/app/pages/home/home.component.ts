@@ -8,6 +8,7 @@ import {startWith, map} from 'rxjs/operators';
 import {AsyncPipe} from '@angular/common';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { Observable } from 'rxjs';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,8 @@ import { Observable } from 'rxjs';
     FormsModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    AsyncPipe
+    AsyncPipe,
+    
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -52,7 +54,12 @@ export class HomeComponent {
 
 
   buscar(localidadDestino:string,localidadOrigen:string, fecha:string) {
-    this.router.navigate(['/viajes', localidadOrigen, localidadDestino, fecha]);
+    if(localidadOrigen == '' || localidadDestino == '' || fecha == ''){
+      alert("Debe rellenar todos los campos");
+    }
+    else {
+      this.router.navigate(['/viajes', localidadOrigen, localidadDestino, fecha]);
+    }
   }
   
   
