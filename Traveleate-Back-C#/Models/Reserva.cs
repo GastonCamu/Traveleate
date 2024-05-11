@@ -19,7 +19,7 @@ namespace Traveleate_Back_C_.Models
         public int IdButaca { get; set; }
         [ForeignKey("Viaje")]
         public int IdViaje { get; set; }
-        public decimal PrecioTotal { get; set; }
+        public int PrecioTotal { get; set; }
 
     }
 }

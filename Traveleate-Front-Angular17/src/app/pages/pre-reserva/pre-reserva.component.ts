@@ -6,6 +6,7 @@ import { ButacaService } from '../../services/butaca.service';
 import { IButaca } from '../../models/butaca';
 import { CategoriaButacaService } from '../../services/categoria-butaca.service';
 import { ICategoriaButaca } from '../../models/categoriaButaca';
+import { ViajeService } from '../../services/viaje.service';
 
 @Component({
   selector: 'app-pre-reserva',
@@ -19,6 +20,7 @@ export class PreReservaComponent implements OnInit {
   private colectivoService = inject(ColectivoService);
   private butacaService = inject(ButacaService);
   private catButacaService = inject(CategoriaButacaService);
+  private viajeService = inject(ViajeService);
 
   @Input('idViaje')idViaje! : number;
   @Input('idColectivo')idColectivo! : number;
@@ -28,6 +30,19 @@ export class PreReservaComponent implements OnInit {
   butacas: any[] = [];
   butaca! : IButaca;
   categoriaButaca! : ICategoriaButaca;
+  ButacasReservadas! : number[];
+
+  obtenerListabutacasReservadas() {
+    this.viajeService.obtenerButacasReservadas(this.idViaje).subscribe({
+      next:(res)=>{
+        this.ButacasReservadas = res.data;
+        console.log(this.ButacasReservadas);
+      },
+      error:(err)=>{
+        console.log(err.message);
+      }
+    });
+  }
 
   obtenerCantButacas() {
     this.colectivoService.obtenerCantButacas(this.idColectivo).subscribe({
@@ -74,5 +89,6 @@ export class PreReservaComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerCantButacas();
+    this.obtenerListabutacasReservadas();
   }
 }

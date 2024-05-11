@@ -56,6 +56,43 @@ namespace Traveleate_Back_C_.Controllers
             return _response;
         }
 
+        [HttpGet("{idViaje}/ButacasReservadas")]
+        public ActionResult<ResponseDto> ObtenerButacasReservadas(int idViaje)
+        {
+            try
+            {
+                var viaje = _context.Viajes.FirstOrDefault(v => v.IdViaje == idViaje);
+                var butacasReservadas = viaje.ButacaReservadas;
+
+                _response.Data = butacasReservadas;
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.Message = ex.Message;
+            }
+            return _response;
+        }
+
+        [HttpPost("{idViaje}/AgregarButaca")]
+        public ActionResult<ResponseDto> AgregarButacaReservada(int idViaje, int numeroButaca)
+        {
+            try
+            {
+                var viaje = _context.Viajes.FirstOrDefault(v => v.IdViaje == idViaje);
+                var butacas = viaje.ButacaReservadas != null ? viaje.ButacaReservadas.ToList() : new List<int>();
+                butacas.Add(numeroButaca);
+                viaje.ButacaReservadas = butacas.ToArray();
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.Message = ex.Message;
+            }
+            return _response;
+        }
+
         [HttpPost]
         public ResponseDto CrearViaje([FromBody] Viaje viaje)
         {
@@ -73,5 +110,7 @@ namespace Traveleate_Back_C_.Controllers
 
             return _response;
         }
+
+
     }
 }

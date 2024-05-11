@@ -77,7 +77,7 @@ namespace Traveleate_Back_C_.Migrations
                     MayorEdad = table.Column<bool>(type: "bit", nullable: false),
                     IdButaca = table.Column<int>(type: "int", nullable: false),
                     IdViaje = table.Column<int>(type: "int", nullable: false),
-                    PrecioTotal = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    PrecioTotal = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -12,7 +12,7 @@ using Traveleate_Back_C_.Data;
 namespace Traveleate_Back_C_.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240510203945_InitDB")]
+    [Migration("20240511005914_InitDB")]
     partial class InitDB
     {
         /// <inheritdoc />
@@ -127,8 +127,8 @@ namespace Traveleate_Back_C_.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("PrecioTotal")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("PrecioTotal")
+                        .HasColumnType("int");
 
                     b.HasKey("IdReserva");
 

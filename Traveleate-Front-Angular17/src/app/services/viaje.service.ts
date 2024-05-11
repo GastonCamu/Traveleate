@@ -17,4 +17,15 @@ export class ViajeService {
     const urlConParametros = `${this.apiUrl}/${origen}/${destino}/${fecha}`;
     return this.http.get<ResponseAPI>(urlConParametros);
   }
+
+  obtenerButacasReservadas(id: number) {
+    const urlConParametros = `${this.apiUrl}/${id}/ButacasReservadas`;
+    return this.http.get<ResponseAPI>(urlConParametros);
+  }
+
+  GuardarButaca(idViaje: number, numeroButaca: number) {
+    const url = `${this.apiUrl}/${idViaje}/AgregarButaca?numeroButaca=${numeroButaca}`;
+    return this.http.post<ResponseAPI>(url, null);
+  }  
+  
 }
