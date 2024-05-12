@@ -18,6 +18,10 @@ export class ViajeService {
     return this.http.get<ResponseAPI>(urlConParametros);
   }
 
+  obtenerViaje(id: number) {
+    return this.http.get<ResponseAPI>(`${this.apiUrl}/${id}`);
+  }
+
   obtenerButacasReservadas(id: number) {
     const urlConParametros = `${this.apiUrl}/${id}/ButacasReservadas`;
     return this.http.get<ResponseAPI>(urlConParametros);

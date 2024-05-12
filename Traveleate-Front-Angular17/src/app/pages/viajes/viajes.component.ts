@@ -5,12 +5,15 @@ import {MatTableModule} from '@angular/material/table';
 import { IViaje } from '../../models/viaje';
 import { ViajeService } from '../../services/viaje.service';
 import { CommonModule } from '@angular/common';
+import {MatButtonModule} from '@angular/material/button';
+import { NavComponent } from '../../layouts/nav/nav.component';
+import { FooterComponent } from '../../layouts/footer/footer.component';
 
 
 @Component({
   selector: 'app-viajes',
   standalone: true,
-  imports: [MatTableModule, CommonModule],
+  imports: [MatTableModule, CommonModule,MatButtonModule,NavComponent,FooterComponent],
   templateUrl: './viajes.component.html',
   styleUrl: './viajes.component.scss'
 })

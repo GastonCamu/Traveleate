@@ -9,6 +9,8 @@ import {AsyncPipe} from '@angular/common';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { Observable } from 'rxjs';
 import {MatButtonModule} from '@angular/material/button';
+import { NavComponent } from '../../layouts/nav/nav.component';
+import { FooterComponent } from '../../layouts/footer/footer.component';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +20,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatAutocompleteModule,
     ReactiveFormsModule,
     AsyncPipe,
+    NavComponent,
+    FooterComponent
     
   ],
   templateUrl: './home.component.html',

@@ -1,25 +1,38 @@
-<div>
-    <div class="colectivo">
-        <div class="butaca" *ngFor="let butaca of butacas; let i = index">
-            @if (ButacasReservadas != null) {
-                <button
-                [ngClass]="{'reservada': ButacasReservadas.includes(i + 1)}"
-                (click)="elegirButaca(i + 1)">{{ i + 1}}
-                </button>
-            }
-        </div>
-
-    </div>
-    @if (categoriaButaca) 
-    {
-        <div>
-            <p>Butaca: {{ butaca.idButaca }}</p>
-            <p>Tipo de butaca: {{ categoriaButaca.categoria }}</p>
-            <p>Precio: ${{categoriaButaca.precio}}</p>
+<div class="container-navbar">
+    @if (viaje) {
+        <div class="container-info-viaje">
+            <p><span>Desde:</span> {{viaje.localidadOrigen}}</p>
+            <p><span>Hacia:</span> {{viaje.localidadDestino}}</p>
+            <p><span>Fecha:</span> {{viaje.fecha | date:'dd/MM/yyyy'}}</p>
+            <p><span>Horario:</span> {{viaje.fecha | date:'HH:mm \'hs\''}}</p>
         </div>
     }
-    <div>
-        <button (click)="Volver()">Volver</button>
-        <button (click)="enviarReserva()">Reservar</button>
+    @if (categoriaButaca) 
+    {
+        <div class="container-info-butaca">
+            <p><span>Butaca Nro:</span> {{ butaca.idButaca }}</p>
+            <p><span>Categoria:</span> {{ categoriaButaca.categoria }}</p>
+            <p><span>Precio:</span> ${{categoriaButaca.precio}}</p>
+        </div>
+    }
+</div>
+
+<div class="container-body">
+    <div class="colectivo">
+        @if (ButacasReservadas != null) {
+            <button *ngFor="let butaca of butacas; let i = index"
+            [ngClass]="{'reservada': ButacasReservadas.includes(i + 1)}"
+            (click)="elegirButaca(i + 1)"> {{i + 1}}<img src="./assets/img/icono-asiento.png" alt="{{i + 1}}">
+            </button>
+        }
     </div>
+    <div class="container-disponible">
+        <p><span class="box-disponible"></span>Disponible</p>
+        <p><span class="box-reservada"></span>Reservada</p>
+    </div>
+</div>
+
+<div class="container-btn">
+    <button class="btn-volver" (click)="Volver()">Volver</button>
+    <button class="btn-reservar" (click)="enviarReserva()">Reservar</button>
 </div>

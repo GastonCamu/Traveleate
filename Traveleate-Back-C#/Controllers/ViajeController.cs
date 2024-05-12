@@ -19,6 +19,38 @@ namespace Traveleate_Back_C_.Controllers
             _response = new ResponseDto();
         }
 
+        [HttpGet("{idViaje}")]
+        public ResponseDto ObtenerViaje(int idViaje)
+        {
+            try
+            {
+                var viaje = _context.Viajes.FirstOrDefault(b => b.IdViaje == idViaje);
+
+                var localidadOrigen = _context.Localidades.FirstOrDefault(l => l.IdLocalidad == viaje.IdLocalidadOrigen)?.NombreLocalidad;
+                var localidadDestino = _context.Localidades.FirstOrDefault(l => l.IdLocalidad == viaje.IdLocalidadDestino)?.NombreLocalidad;
+
+                var viajeConNombres = new
+                {
+                    IdViaje = viaje.IdViaje,
+                    LocalidadOrigen = localidadOrigen,
+                    LocalidadDestino = localidadDestino,
+                    Fecha = viaje.Fecha,
+                    IdColectivo = viaje.IdColectivo,
+                    PrecioViaje = viaje.Precio,
+                    ButacasReservadas = viaje.ButacaReservadas
+                };
+
+                _response.Data = viajeConNombres;
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.Message = ex.Message;
+            }
+
+            return _response;
+        }
+
         [HttpGet("{localidadOrigen}/{localidadDestino}/{fecha}")]
         public ActionResult<ResponseDto> ObtenerViajesPorNombre(string localidadOrigen, string localidadDestino, DateTime fecha)
         {

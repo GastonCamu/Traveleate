@@ -7,6 +7,8 @@ import { IButaca } from '../../models/butaca';
 import { CategoriaButacaService } from '../../services/categoria-butaca.service';
 import { ICategoriaButaca } from '../../models/categoriaButaca';
 import { ViajeService } from '../../services/viaje.service';
+import { IViaje } from '../../models/viaje';
+
 
 @Component({
   selector: 'app-pre-reserva',
@@ -26,6 +28,7 @@ export class PreReservaComponent implements OnInit {
   @Input('idColectivo')idColectivo! : number;
   @Input('precioViaje')precioViaje! : number;
 
+  viaje! : IViaje;
   totalButacas! : number;
   butacas: IButaca[] = [];
   butaca! : IButaca;
@@ -34,15 +37,16 @@ export class PreReservaComponent implements OnInit {
   coincidencia : boolean = false;
   butacaSeleccionada! : number;
 
-  obtenerListaButacasReservadas() {
-    this.viajeService.obtenerButacasReservadas(this.idViaje).subscribe({
-      next:(res)=>{
-        this.ButacasReservadas = res.data;
+  obtenerViaje() {
+    this.viajeService.obtenerViaje(this.idViaje).subscribe({
+      next:(res) =>{
+        this.viaje = res.data;
+        this.ButacasReservadas = this.viaje.butacasReservadas;
       },
       error:(err)=>{
         console.log(err.message);
       }
-    });
+    })
   }
   
   obtenerCantButacas() {
@@ -86,7 +90,7 @@ export class PreReservaComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerCantButacas();
-    this.obtenerListaButacasReservadas();
+    this.obtenerViaje();
   }
 
   enviarReserva() {

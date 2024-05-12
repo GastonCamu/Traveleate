@@ -1,0 +1,41 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 2vw 0;
+    background-color: rgb(24, 24, 24);
+    margin-top: 5vw;
+    div {
+        margin: 1vw 0;
+        p {
+            color: white;
+            font-size: 1.5vw;
+            font-weight: 400;
+        }
+    }
+    div {
+        a {
+            margin: 0 1vw;
+            img {
+                transition: width 2s, height 2s, filter 2s;
+                filter: drop-shadow(4px 3px 10px rgba(255, 255, 255, 0.473));
+                border-radius: 50%;
+                width: 5vw;
+                height: 5vw;
+            }
+            img.red-social-linkedin-img:hover {
+                transition: width 1s, height 1s, filter 2s;
+                filter: invert(20%) drop-shadow(4px 3px 20px rgb(0, 153, 255));
+                width: 6vw;
+                height: 6vw;
+            }
+            img.red-social-github-img:hover {
+                transition: width 1s, height 1s, filter 2s;
+                filter: invert(100%) drop-shadow(4px 3px 20px rgb(255, 255, 255));
+                width: 6vw;
+                height: 6vw;
+            }
+        }
+    }
+}
