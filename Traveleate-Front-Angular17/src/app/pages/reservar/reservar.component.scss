@@ -1,5 +1,87 @@
-form.formReserva {
-    display: flex;
-    flex-direction: column;
-    margin: 6vw;
+div.container-body {
+    width: 100%;
+    height: 100%;
+    padding-top: 5vw;
+    background-color: rgb(192, 192, 192);
+    form.formReserva {
+        box-shadow: 1px 1px 20px rgb(95, 95, 95);
+        width: 80%;
+        margin: auto;
+        background-color: rgb(255, 255, 255);
+        padding: 2vw;
+        border-radius: 10px;
+        div {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            label {
+                font-size: 1.6vw;
+                font-weight: 500;
+                margin-bottom: 0.5vw;
+            }
+            input[type="text"] {
+                margin-bottom: 3vw;
+                width: 100%;
+                height: 3vw;
+                border: 1px solid rgba(0, 0, 0, 0.342);
+                border-radius: 3px;
+                padding-left: 1vw;
+                font-size: 1.4vw;
+            }
+            input[type="text"]:focus {
+                outline: none;
+                box-shadow: 0px 0px 10px rgb(119, 119, 255);
+            }
+            input[type="text"]:hover {
+                border: 1px solid blue;
+            }
+        }
+        div.form-div-check {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            label {
+                margin: 0;
+                margin-left: 1vw;
+            }
+            input[type="checkbox"] {
+                cursor: pointer;
+                width: 2vw;
+                height: 2vw;
+                border-radius: 10px;
+            }
+        }
+    }
+    div.container-btn {
+        margin: 2vw auto 0 auto;
+        display: flex;
+        width: 80%;
+        justify-content: space-evenly;
+        button {
+            width: 20%;
+            height: 3vw;
+            border-radius: 10px;
+            font-size: 1.5vw;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            font-weight: 600;
+            margin: none;
+        }
+        button.btn-volver {
+            background-color: white;
+        }
+        button.btn-volver:hover {
+            background-color: rgb(228, 228, 228);
+        }
+        button.btn-reservar {
+            background-color: rgb(0, 0, 172);
+            color: white;
+        }
+        button.btn-reservar:hover {
+            background-color: rgb(0, 0, 112);
+        }
+    }
 }

@@ -1,4 +1,4 @@
-<div>
+<div class="container-body">
     <form [formGroup]="formReserva" class="formReserva">
 
         <div>
@@ -16,12 +16,14 @@
             <input type="text" formControlName="dni">
         </div>
 
-        <div>        
-            <label>¿Tenes mas de 18 años?</label>
+        <div class="form-div-check">        
             <input type="checkbox" formControlName="mayorEdad">
+            <label>¿Tienes más de 12 años?</label>
         </div>
 
-        <button (click)="Reservar()">Reservar</button>
-        <button (click)="Volver()">Volver</button>
     </form>
+    <div class="container-btn">
+        <button class="btn-volver" (click)="Volver()">Volver</button> 
+        <button class="btn-reservar" (click)="Reservar()">Reservar</button>
+    </div>
 </div>
