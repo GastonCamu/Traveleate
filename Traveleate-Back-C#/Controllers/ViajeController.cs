@@ -63,7 +63,8 @@ namespace Traveleate_Back_C_.Controllers
                     .Where (v =>
                     v.IdLocalidadOrigen == localidadOrigenEntity.IdLocalidad &&
                     v.IdLocalidadDestino == localidadDestinoEntity.IdLocalidad &&
-                    v.Fecha.Date == fecha.Date
+                    v.Fecha.Date == fecha.Date &&
+                    v.ButacaReservadas.Length < 30
                 )
                 .OrderBy(v => v.Fecha)
                 .Select(v => new
@@ -111,11 +112,20 @@ namespace Traveleate_Back_C_.Controllers
         {
             try
             {
-                var viaje = _context.Viajes.FirstOrDefault(v => v.IdViaje == idViaje);
-                var butacas = viaje.ButacaReservadas != null ? viaje.ButacaReservadas.ToList() : new List<int>();
-                butacas.Add(numeroButaca);
-                viaje.ButacaReservadas = butacas.ToArray();
-                _context.SaveChanges();
+                if (numeroButaca <= 0)
+                {
+                    _response.IsSuccess = false;
+                    _response.Message = "El numero ingresado tiene que ser mayor a 0";
+
+                }
+                else
+                {
+                    var viaje = _context.Viajes.FirstOrDefault(v => v.IdViaje == idViaje);
+                    var butacas = viaje.ButacaReservadas != null ? viaje.ButacaReservadas.ToList() : new List<int>();
+                    butacas.Add(numeroButaca);
+                    viaje.ButacaReservadas = butacas.ToArray();
+                    _context.SaveChanges();
+                }
             }
             catch (Exception ex)
             {

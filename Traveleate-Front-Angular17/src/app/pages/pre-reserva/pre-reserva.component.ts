@@ -94,14 +94,25 @@ export class PreReservaComponent implements OnInit {
   }
 
   enviarReserva() {
-    this.validacionReserva(this.butacaSeleccionada);
-    if (this.coincidencia) {
-      alert("La butaca ya fue reservada");
-      this.router.navigate(['/']);
-    }
-    else {
-      this.router.navigate(['/reservar',this.idViaje,this.idColectivo,this.precioViaje,this.butaca.idButaca,this.categoriaButaca.precio]);
-    }
+    this.viajeService.obtenerButacasReservadas(this.idViaje).subscribe({
+      next:(res)=>{
+        this.ButacasReservadas = res.data;
+      },
+      error:(err)=>{
+        console.log(err.message);
+      },
+      complete:()=>{
+        this.validacionReserva(this.butacaSeleccionada);
+        if (this.coincidencia) {
+          alert("La butaca ya fue reservada");
+          this.router.navigate(['/']);
+        }
+        else {
+          this.router.navigate(['/reservar',this.idViaje,this.idColectivo,this.precioViaje,this.butaca.idButaca,this.categoriaButaca.precio]);
+        }
+        console.log(this.coincidencia);
+      }
+    }) 
   }
 
   Volver() {

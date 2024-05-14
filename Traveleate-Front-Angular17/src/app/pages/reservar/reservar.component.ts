@@ -59,7 +59,7 @@ export class ReservarComponent implements OnInit{
       },
       error:(err)=>{
         console.log(err.message);
-      }
+      },
     });
   }
 
