@@ -1,11 +1,17 @@
 nav {
-    padding: 1vw 0;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 6vw;
-    h1 {
-        margin-left: 1vw;
-        font-size: 2vw;
+    div.container-fluid {
+        a.navbar-brand {
+            font-size: 2vw;
+            font-weight: 500;
+        }
+    }
+    div.div-elements {
+        justify-content: flex-end;
+        div {
+            a {
+                font-size: 1.5vw;
+                font-weight: 500;
+            }
+        }
     }
 }
