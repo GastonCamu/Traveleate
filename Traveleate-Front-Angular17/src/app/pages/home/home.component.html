@@ -42,6 +42,7 @@
             type="date"
             name="fecha"
             #fecha
+            [min]="getDate()"
           >
           
           <button (click)="buscar(localidadDestino.value,localidadOrigen.value,fecha.value)" >Buscar</button>

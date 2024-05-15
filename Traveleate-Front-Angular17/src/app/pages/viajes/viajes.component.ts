@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import { NavComponent } from '../../layouts/nav/nav.component';
 import { FooterComponent } from '../../layouts/footer/footer.component';
+import { SignalsService } from '../../services/signals.service';
 
 
 @Component({
@@ -24,6 +25,7 @@ export class ViajesComponent implements OnInit {
   @Input('fecha')fecha! : string;
 
   private viajeServicio = inject(ViajeService);
+  private signalsService = inject(SignalsService);
   public listaViajes:IViaje[] = [];
   displayedColumns: string[] = ['localidadOrigen', 'localidadDestino', 'hora','fecha', 'idColectivo','accion'];
 
@@ -41,7 +43,10 @@ export class ViajesComponent implements OnInit {
   constructor(private router:Router) {}
 
   elegirButaca(viaje:IViaje) {
-    this.router.navigate(['/pre-reserva',viaje.idViaje,viaje.idColectivo,viaje.precioViaje]);
+    this.signalsService.idViaje.set(viaje.idViaje);
+    this.signalsService.idColectivo.set(viaje.idColectivo);
+    this.signalsService.precioViaje.set(viaje.precioViaje);
+    this.router.navigate(['/pre-reserva']);
   }
 
   ngOnInit(): void {

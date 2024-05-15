@@ -8,6 +8,7 @@ import { CategoriaButacaService } from '../../services/categoria-butaca.service'
 import { ICategoriaButaca } from '../../models/categoriaButaca';
 import { ViajeService } from '../../services/viaje.service';
 import { IViaje } from '../../models/viaje';
+import { SignalsService } from '../../services/signals.service';
 
 
 @Component({
@@ -23,10 +24,7 @@ export class PreReservaComponent implements OnInit {
   private butacaService = inject(ButacaService);
   private catButacaService = inject(CategoriaButacaService);
   private viajeService = inject(ViajeService);
-
-  @Input('idViaje')idViaje! : number;
-  @Input('idColectivo')idColectivo! : number;
-  @Input('precioViaje')precioViaje! : number;
+  private signalsService = inject(SignalsService);
 
   viaje! : IViaje;
   totalButacas! : number;
@@ -38,7 +36,7 @@ export class PreReservaComponent implements OnInit {
   butacaSeleccionada! : number;
 
   obtenerViaje() {
-    this.viajeService.obtenerViaje(this.idViaje).subscribe({
+    this.viajeService.obtenerViaje(this.signalsService.idViaje()).subscribe({
       next:(res) =>{
         this.viaje = res.data;
         this.ButacasReservadas = this.viaje.butacasReservadas;
@@ -50,7 +48,7 @@ export class PreReservaComponent implements OnInit {
   }
   
   obtenerCantButacas() {
-    this.colectivoService.obtenerCantButacas(this.idColectivo).subscribe({
+    this.colectivoService.obtenerCantButacas(this.signalsService.idColectivo()).subscribe({
       next:(res)=>{
         this.totalButacas = res.data;
         this.butacas = Array(this.totalButacas).fill(0);
@@ -94,7 +92,7 @@ export class PreReservaComponent implements OnInit {
   }
 
   enviarReserva() {
-    this.viajeService.obtenerButacasReservadas(this.idViaje).subscribe({
+    this.viajeService.obtenerButacasReservadas(this.signalsService.idViaje()).subscribe({
       next:(res)=>{
         this.ButacasReservadas = res.data;
       },
@@ -108,7 +106,9 @@ export class PreReservaComponent implements OnInit {
           this.router.navigate(['/']);
         }
         else {
-          this.router.navigate(['/reservar',this.idViaje,this.idColectivo,this.precioViaje,this.butaca.idButaca,this.categoriaButaca.precio]);
+          this.signalsService.idButaca.set(this.butacaSeleccionada);
+          this.signalsService.precioButaca.set(this.categoriaButaca.precio);
+          this.router.navigate(['/reservar']);
         }
         console.log(this.coincidencia);
       }

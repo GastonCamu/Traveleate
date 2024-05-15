@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ReservaService } from '../../services/reserva.service';
 import { IReserva } from '../../models/reserva';
 import { ViajeService } from '../../services/viaje.service';
+import { SignalsService } from '../../services/signals.service';
 
 @Component({
   selector: 'app-reservar',
@@ -15,15 +16,10 @@ import { ViajeService } from '../../services/viaje.service';
   styleUrl: './reservar.component.scss'
 })
 export class ReservarComponent implements OnInit{
-  public formBuild = inject(FormBuilder);
-  public reservarService = inject(ReservaService);
-  public viajeService = inject(ViajeService);
-
-  @Input('idViaje')idViaje! : number;
-  @Input('idColectivo')idColectivo! : number;
-  @Input('precioViaje')precioViaje! : number;
-  @Input('idButaca')idButaca! : number;
-  @Input('precioButaca')precioButaca! : number;
+  private formBuild = inject(FormBuilder);
+  private reservarService = inject(ReservaService);
+  private viajeService = inject(ViajeService);
+  private signalsService = inject(SignalsService);
 
   precioTotal! : number;
 
@@ -39,21 +35,19 @@ export class ReservarComponent implements OnInit{
   });
 
   Reservar() {
-    console.log(this.precioTotal)
     const reserva: IReserva = {
       idReserva: this.formReserva.value.idReserva,
       nombreCliente: this.formReserva.value.nombre,
       apellidoCliente: this.formReserva.value.apellido,
       dniCliente: this.formReserva.value.dni,
       mayorEdad: this.formReserva.value.mayorEdad,
-      idButaca: this.idButaca,
-      idViaje: this.idViaje,
+      idButaca: this.signalsService.idButaca(),
+      idViaje: this.signalsService.idViaje(),
       precioTotal: this.precioTotal
     }
 
     this.reservarService.enviarReserva(reserva).subscribe({
       next:(res)=>{
-        console.log(reserva)
         this.ReservarButaca()
         this.router.navigate(["/"])
       },
@@ -65,7 +59,7 @@ export class ReservarComponent implements OnInit{
 
   
   ReservarButaca() {
-    this.viajeService.GuardarButaca(this.idViaje, this.idButaca).subscribe({});
+    this.viajeService.GuardarButaca(this.signalsService.idViaje(), this.signalsService.idButaca()).subscribe({});
   }
   
   Volver() {
@@ -75,7 +69,7 @@ export class ReservarComponent implements OnInit{
   constructor(private router:Router) {}
 
   ngOnInit(): void {
-    this.precioTotal = Number(this.precioViaje) + Number(this.precioButaca);
+    this.precioTotal = Number(this.signalsService.precioViaje()) + Number(this.signalsService.precioButaca());
   }
 
 

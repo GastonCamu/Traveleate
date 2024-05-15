@@ -8,6 +8,6 @@ export const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'home', component: HomeComponent},
     {path: 'viajes/:localidadOrigen/:localidadDestino/:fecha', component: ViajesComponent},
-    {path: 'pre-reserva/:idViaje/:idColectivo/:precioViaje', component: PreReservaComponent},
-    {path: 'reservar/:idViaje/:idColectivo/:precioViaje/:idButaca/:precioButaca', component: ReservarComponent},
+    {path: 'pre-reserva', component: PreReservaComponent},
+    {path: 'reservar', component: ReservarComponent},
 ];
