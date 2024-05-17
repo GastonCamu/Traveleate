@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, Input, OnInit, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
 import {MatTableModule} from '@angular/material/table';
@@ -42,10 +42,10 @@ export class ViajesComponent implements OnInit {
 
   constructor(private router:Router) {}
 
-  elegirButaca(viaje:IViaje) {
-    this.signalsService.idViaje.set(viaje.idViaje);
-    this.signalsService.idColectivo.set(viaje.idColectivo);
-    this.signalsService.precioViaje.set(viaje.precioViaje);
+  elegirViaje(viaje:IViaje) {
+    this.signalsService.guardarIdViaje(viaje.idViaje);
+    this.signalsService.guardarIdColectivo(viaje.idColectivo);
+    this.signalsService.guardarPrecioViaje(viaje.precioViaje);
     this.router.navigate(['/pre-reserva']);
   }
 

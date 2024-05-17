@@ -1,16 +1,18 @@
 nav {
     div.container-fluid {
-        a.navbar-brand {
+        a.navbar-brand{
             font-size: 2vw;
             font-weight: 500;
         }
     }
     div.div-elements {
-        justify-content: flex-end;
+        justify-content: space-between;
+        align-items: center;
         div {
             a {
                 font-size: 1.5vw;
                 font-weight: 500;
+                color: black;
             }
         }
     }

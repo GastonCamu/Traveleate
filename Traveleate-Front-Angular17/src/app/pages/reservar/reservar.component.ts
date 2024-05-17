@@ -7,13 +7,15 @@ import { ReservaService } from '../../services/reserva.service';
 import { IReserva } from '../../models/reserva';
 import { ViajeService } from '../../services/viaje.service';
 import { SignalsService } from '../../services/signals.service';
+import { FooterComponent } from "../../layouts/footer/footer.component";
+import { NavComponent } from "../../layouts/nav/nav.component";
 
 @Component({
-  selector: 'app-reservar',
-  standalone: true,
-  imports: [CommonModule,ReactiveFormsModule],
-  templateUrl: './reservar.component.html',
-  styleUrl: './reservar.component.scss'
+    selector: 'app-reservar',
+    standalone: true,
+    templateUrl: './reservar.component.html',
+    styleUrl: './reservar.component.scss',
+    imports: [CommonModule, ReactiveFormsModule, FooterComponent, NavComponent]
 })
 export class ReservarComponent implements OnInit{
   private formBuild = inject(FormBuilder);
@@ -45,16 +47,29 @@ export class ReservarComponent implements OnInit{
       idViaje: this.signalsService.idViaje(),
       precioTotal: this.precioTotal
     }
-
-    this.reservarService.enviarReserva(reserva).subscribe({
-      next:(res)=>{
-        this.ReservarButaca()
-        this.router.navigate(["/"])
-      },
-      error:(err)=>{
-        console.log(err.message);
-      },
-    });
+    if (reserva.idViaje == 0 || reserva.idButaca == 0) {
+      alert("Ups, algo salió mal, inténtelo de nuevo");
+      this.router.navigate(["/"]);
+    }
+    else {
+      if (reserva.nombreCliente == '' || reserva.apellidoCliente == '' || reserva.dniCliente == '') {
+        alert("Por favor complete todos los campos");
+      }
+      else {
+        this.reservarService.enviarReserva(reserva).subscribe({
+          next:(res)=>{
+            this.ReservarButaca()
+          },
+          error:(err)=>{
+            console.log(err.message);
+          },
+          complete:()=>{
+            alert("Reserva realizada con exito");
+            this.router.navigate(["/"])
+          }
+        });
+      }
+    }
   }
 
   
@@ -63,7 +78,7 @@ export class ReservarComponent implements OnInit{
   }
   
   Volver() {
-    this.router.navigate(["/"])
+    this.router.navigate(["/pre-reserva"])
   }
 
   constructor(private router:Router) {}

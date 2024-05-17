@@ -1,3 +1,4 @@
+<app-nav></app-nav>
 <div class="container-body">
     <form [formGroup]="formReserva" class="formReserva">
 
@@ -20,10 +21,15 @@
             <input type="checkbox" formControlName="mayorEdad">
             <label>¿Tienes más de 12 años?</label>
         </div>
-
+        @if (precioTotal != 0) {
+            <div class="container-total">
+                <label><span>Total:</span> ${{precioTotal}}</label>
+            </div>
+        }
     </form>
     <div class="container-btn">
         <button class="btn-volver" (click)="Volver()">Volver</button> 
         <button class="btn-reservar" (click)="Reservar()">Reservar</button>
     </div>
 </div>
+<app-footer></app-footer>

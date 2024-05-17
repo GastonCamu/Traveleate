@@ -27,7 +27,15 @@ namespace Traveleate_Back_C_.Controllers
             try
             {
                 var colectivo = _context.Colectivos.FirstOrDefault(p => p.IdColectivo == idColectivo);
-                _response.Data = colectivo.TotalButacas;
+                if (colectivo != null)
+                {
+                    _response.Data = colectivo.TotalButacas;
+                }
+                else
+                {
+                    _response.IsSuccess = false;
+                    _response.Message = "Es nulo colectivo";
+                }
             }
             catch (Exception ex)
             {

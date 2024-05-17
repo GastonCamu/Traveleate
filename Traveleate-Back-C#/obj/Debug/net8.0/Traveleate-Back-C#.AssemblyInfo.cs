@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Traveleate-Back-C#")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d4060eb44ede504580d16664801f1ac963d4cee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bbb8b4a0d4ab8ddf336d9d458f4ddc5665fb5e25")]
 [assembly: System.Reflection.AssemblyProductAttribute("Traveleate-Back-C#")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Traveleate-Back-C#")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ColectivoService } from '../../services/colectivo.service';
 import { CommonModule } from '@angular/common';
@@ -18,7 +18,7 @@ import { SignalsService } from '../../services/signals.service';
   templateUrl: './pre-reserva.component.html',
   styleUrl: './pre-reserva.component.scss'
 })
-export class PreReservaComponent implements OnInit {
+export class PreReservaComponent{
 
   private colectivoService = inject(ColectivoService);
   private butacaService = inject(ButacaService);
@@ -33,7 +33,7 @@ export class PreReservaComponent implements OnInit {
   categoriaButaca! : ICategoriaButaca;
   ButacasReservadas! : number[];
   coincidencia : boolean = false;
-  butacaSeleccionada! : number;
+  butacaSeleccionada : number = 0;
 
   obtenerViaje() {
     this.viajeService.obtenerViaje(this.signalsService.idViaje()).subscribe({
@@ -48,6 +48,10 @@ export class PreReservaComponent implements OnInit {
   }
   
   obtenerCantButacas() {
+    if (this.signalsService.idColectivo() == 0) {
+      alert("Ups, algo salió mal, inténtelo de nuevo")
+      this.router.navigate(['/']);
+    }
     this.colectivoService.obtenerCantButacas(this.signalsService.idColectivo()).subscribe({
       next:(res)=>{
         this.totalButacas = res.data;
@@ -84,15 +88,17 @@ export class PreReservaComponent implements OnInit {
     this.obtenerButaca(butacaSeleccionada);
   }
   
-  constructor(private router:Router) {}
-
-  ngOnInit(): void {
+  constructor(private router:Router) {
     this.obtenerCantButacas();
     this.obtenerViaje();
   }
 
   enviarReserva() {
-    this.viajeService.obtenerButacasReservadas(this.signalsService.idViaje()).subscribe({
+    if (this.butacaSeleccionada == 0) {
+      alert("Debe seleccionar una butaca")
+    }
+    else {
+      this.viajeService.obtenerButacasReservadas(this.signalsService.idViaje()).subscribe({
       next:(res)=>{
         this.ButacasReservadas = res.data;
       },
@@ -106,13 +112,13 @@ export class PreReservaComponent implements OnInit {
           this.router.navigate(['/']);
         }
         else {
-          this.signalsService.idButaca.set(this.butacaSeleccionada);
-          this.signalsService.precioButaca.set(this.categoriaButaca.precio);
+          this.signalsService.guardarIdButaca(this.butacaSeleccionada);
+          this.signalsService.guardarPrecioButaca(this.categoriaButaca.precio);
           this.router.navigate(['/reservar']);
         }
-        console.log(this.coincidencia);
       }
     }) 
+    }
   }
 
   Volver() {
