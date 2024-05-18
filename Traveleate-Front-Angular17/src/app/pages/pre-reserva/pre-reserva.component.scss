@@ -1,169 +1,330 @@
-div.container-navbar {
-    width: 100%;
-    height: 6vw;
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: white;
-    z-index: 1;
-    box-shadow: 1px 1px 10px rgb(0, 0, 0);
-
-    div.container-info-viaje {
-        display: flex;
-        margin-left: 1vw;
-
-        p {
-            margin-right: 2vw;
-            font-weight: 500;
-
-            span {
-                font-weight: 600;
-            }
-        }
-    }
-    div.container-info-butaca {
-        display: flex;
-
-        p {
-            margin-right: 2vw;
-            font-weight: 500;
-
-            span {
-                font-weight: 600;
-            }
-        }
-    }
-}
-div.container-body {
-    display: flex;
-    width: 60%;
-    margin: 5vw auto 5vw auto;
-
-    div.colectivo {
-        display: grid;
-        grid-template-columns: 0.5fr 1fr auto;
-        grid-template-rows: repeat(10, auto);
-        width: 25vw;
-        border-radius: 7px;
-        padding: 3vw 2vw; 
-
-        background-color: rgb(233, 233, 233);
-
-        button {
-            margin-top: 3.5vw;
-            border: none;
-            border-radius: 5px;
-            width: 3.5vw;
-            height: 3.5vw;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            cursor: pointer;
-            background-color: rgba(96, 255, 96, 0.733);
-            transition: width 500ms, height 500ms;
-
-            font-weight: 600;
-            font-size: 1.5vw;
-            img {
-                opacity: 0.2;
-                width: 80%;
-                height: 80%;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-        }
-        button:hover {
-            transition: width 500ms, height 500ms;
-            width: 4vw;
-            height: 4vw;
-        }
-        button:focus {
-            border: 2px solid black;
-        }
-        button.reservada {
-            background-color: rgba(255, 54, 54, 0.774);
-            pointer-events: none;
-            color: transparent;
-
-            img {
-                opacity: 0.7;
-            }
-        }
-        @for $i from 1 through 10 {
-            button:nth-child(#{$i}) {
-                grid-column: 3;
-                grid-row: $i;
-
-            }
-        }
-    }
-    div.container-disponible {
-        background-color: rgb(233, 233, 233);
-        padding: 0.5vw 2vw;
-        position: fixed;
-        right: 25%;
+// Media para celulares
+@media screen and (max-width: 991px) {
+    div.container-navbar {
+        margin: auto;
+        width: 95%;
+        top: 0;
         display: flex;
         flex-direction: column;
-        border-radius: 5px;
-        p {
+        align-items: center;
+        background-color: white;
+        box-shadow: 1px 1px 10px rgb(0, 0, 0);
+        text-align: center;
+    
+        div.container-info-viaje {
             display: flex;
-            align-items: center;
-            margin: 0.5vw 0;
-            font-weight: 500;
-            span {
-                width: 2vw;
-                height: 2vw;
-                margin-right: 1vw;
-                border-radius: 5px;
+    
+            p {
+                font-size: 4vw;
+                font-weight: 500;
+    
+                span {
+                    font-weight: 600;
+                }
             }
-            span.box-disponible {
-                display: flex;
-                background-color: rgba(96, 255, 96, 0.733);
-            }
-            span.box-reservada {
-                display: flex;
-                background-color: rgba(255, 54, 54, 0.774);
+        }
+        div.container-info-butaca {
+            display: flex;
+            justify-content: space-around;
+            align-self: stretch;
+            p {
+                font-size: 4vw;
+                font-weight: 500;
+    
+                span {
+                    font-weight: 600;
+                }
             }
         }
     }
-}
-div.container-btn {
-    position: sticky;
-    bottom: 0;
-    display: flex;
-    width: 100%;
-    padding: 1vw;
-    justify-content: space-around;
-    background-color: white;
-    border-top: 0.5px solid black;
-
-    button {
-        width: 45%;
-        height: 5vw;
-        border: 1px solid rgb(0, 0, 172);
-        border-radius: 10px;
-        cursor: pointer;
-        font-size: 1.5vw;
+    div.container-body {
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 0 auto 5vw auto;
+    
+        div.colectivo {
+            margin: auto;
+            display: grid;
+            grid-template-columns: 0.5fr 1fr auto;
+            grid-template-rows: repeat(10, auto);
+            width: 60%;
+            border-radius: 7px;
+            padding: 3vw 2vw; 
+    
+            background-color: rgb(233, 233, 233);
+    
+            button {
+                margin-top: 3.5vw;
+                border: none;
+                border-radius: 5px;
+                width: 11vw;
+                height: 11vw;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                cursor: pointer;
+                background-color: rgba(96, 255, 96, 0.733);
+                transition: width 500ms, height 500ms;
+    
+                font-weight: 600;
+                font-size: 4vw;
+                img {
+                    opacity: 0.2;
+                    width: 80%;
+                    height: 80%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            button:focus {
+                border: 3px solid black;
+            }
+            button.reservada {
+                background-color: rgba(255, 54, 54, 0.774);
+                pointer-events: none;
+                color: transparent;
+    
+                img {
+                    opacity: 0.7;
+                }
+            }
+            @for $i from 1 through 10 {
+                button:nth-child(#{$i}) {
+                    grid-column: 3;
+                    grid-row: $i;
+    
+                }
+            }
+        }
+        div.container-disponible {
+            display: flex;
+            background-color: rgb(233, 233, 233);
+            padding: 2vw;
+            margin: 5vw auto 10vw auto;
+            border-radius: 5px;
+            p {
+                display: flex;
+                align-items: center;
+                margin: 0 1vw;
+                font-weight: 500;
+                font-size: 5vw;
+                span {
+                    width: 5vw;
+                    height: 5vw;
+                    margin-right: 1vw;
+                    border-radius: 5px;
+                }
+                span.box-disponible {
+                    display: flex;
+                    background-color: rgba(96, 255, 96, 0.733);
+                }
+                span.box-reservada {
+                    display: flex;
+                    background-color: rgba(255, 54, 54, 0.774);
+                }
+            }
+        }
+    }
+    div.container-btn {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
         background-color: white;
+    
+        button {
+            margin: 1vw;
+            width: 45%;
+            height: 8vw;
+            border: 1px solid rgb(0, 0, 172);
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 4vw;
+            background-color: white;
+        }
+        button.btn-volver {
+            color: rgb(0, 0, 90);
+        }
+        button.btn-reservar {
+            background-color: rgb(0, 0, 172);
+            color: white;
+        }
+    } 
+}
+
+// Media para computadoras
+@media screen and (min-width: 992px) {
+    div.container-navbar {
+        width: 100%;
+        height: 6vw;
+        position: sticky;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: white;
+        z-index: 1;
+        box-shadow: 1px 1px 10px rgb(0, 0, 0);
+    
+        div.container-info-viaje {
+            display: flex;
+            margin-left: 1vw;
+    
+            p {
+                margin-right: 2vw;
+                font-weight: 500;
+    
+                span {
+                    font-weight: 600;
+                }
+            }
+        }
+        div.container-info-butaca {
+            display: flex;
+    
+            p {
+                margin-right: 2vw;
+                font-weight: 500;
+    
+                span {
+                    font-weight: 600;
+                }
+            }
+        }
     }
-    button.btn-volver {
-        color: rgb(0, 0, 90);
+    div.container-body {
+        display: flex;
+        width: 60%;
+        margin: 5vw auto 5vw auto;
+    
+        div.colectivo {
+            display: grid;
+            grid-template-columns: 0.5fr 1fr auto;
+            grid-template-rows: repeat(10, auto);
+            width: 25vw;
+            border-radius: 7px;
+            padding: 3vw 2vw; 
+    
+            background-color: rgb(233, 233, 233);
+    
+            button {
+                margin-top: 3.5vw;
+                border: none;
+                border-radius: 5px;
+                width: 3.5vw;
+                height: 3.5vw;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                cursor: pointer;
+                background-color: rgba(96, 255, 96, 0.733);
+                transition: width 500ms, height 500ms;
+    
+                font-weight: 600;
+                font-size: 1.5vw;
+                img {
+                    opacity: 0.2;
+                    width: 80%;
+                    height: 80%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            button:hover {
+                transition: width 500ms, height 500ms;
+                width: 4vw;
+                height: 4vw;
+            }
+            button:focus {
+                border: 2px solid black;
+            }
+            button.reservada {
+                background-color: rgba(255, 54, 54, 0.774);
+                pointer-events: none;
+                color: transparent;
+    
+                img {
+                    opacity: 0.7;
+                }
+            }
+            @for $i from 1 through 10 {
+                button:nth-child(#{$i}) {
+                    grid-column: 3;
+                    grid-row: $i;
+    
+                }
+            }
+        }
+        div.container-disponible {
+            background-color: rgb(233, 233, 233);
+            padding: 0.5vw 2vw;
+            position: fixed;
+            right: 25%;
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+            p {
+                display: flex;
+                align-items: center;
+                margin: 0.5vw 0;
+                font-weight: 500;
+                span {
+                    width: 2vw;
+                    height: 2vw;
+                    margin-right: 1vw;
+                    border-radius: 5px;
+                }
+                span.box-disponible {
+                    display: flex;
+                    background-color: rgba(96, 255, 96, 0.733);
+                }
+                span.box-reservada {
+                    display: flex;
+                    background-color: rgba(255, 54, 54, 0.774);
+                }
+            }
+        }
     }
-    button.btn-volver:hover {
-        background-color: rgb(228, 228, 228);
-    }
-    button.btn-reservar {
-        background-color: rgb(0, 0, 172);
-        color: white;
-    }
-    button.btn-reservar:hover {
-        background-color: rgb(0, 0, 112);
+    div.container-btn {
+        position: sticky;
+        bottom: 0;
+        display: flex;
+        width: 100%;
+        padding: 1vw;
+        justify-content: space-around;
+        background-color: white;
+        border-top: 0.5px solid black;
+    
+        button {
+            width: 45%;
+            height: 5vw;
+            border: 1px solid rgb(0, 0, 172);
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.5vw;
+            background-color: white;
+        }
+        button.btn-volver {
+            color: rgb(0, 0, 90);
+        }
+        button.btn-volver:hover {
+            background-color: rgb(228, 228, 228);
+        }
+        button.btn-reservar {
+            background-color: rgb(0, 0, 172);
+            color: white;
+        }
+        button.btn-reservar:hover {
+            background-color: rgb(0, 0, 112);
+        }
     }
 }
