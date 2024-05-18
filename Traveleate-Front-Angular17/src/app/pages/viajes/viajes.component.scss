@@ -1,29 +1,70 @@
-div.container-body {
-    display: flex;
-    width: 85%;
-    margin: 2vw auto 18vw auto;
+// Media para celulares
+@media screen and (max-width: 991px) {
+    div.container-body {
+        display: flex;
+        width: 95%;
+        margin: 2vw auto 18vw auto;
 
-    .mdc-data-table__header-cell {
-        font-weight: 600;
-        font-size: 1.3vw;
-        text-align: center;
-    }
-    .mdc-data-table__cell {
-        text-align: center;
-        font-size: 1.3vw;
-    }
+        .mdc-data-table__header-cell {
+            font-weight: 400;
+            font-size: 3.5vw;
+            padding: 1vw;
+            text-align: center;
+        }
+        .mdc-data-table__cell {
+            text-align: center;
+            font-size: 3vw;
+            padding: 0.2vw;
+        }
+        td.td-btn {
 
-    button.botonReservar {
-        background-color: rgb(0, 0, 172);
-        width: 8vw;
-        height: 2.3vw;
-        color: white;
-        border: none;
-        border-radius: 10px;
-        font-size: 1.2vw;
-        cursor: pointer;
-    }
-    button.botonReservar:hover {
-        background-color: rgb(0, 0, 112);
+        }
+        button.botonReservar {
+            margin-right: 1vw;
+            background-color: rgb(0, 0, 172);
+            width: 15vw;
+            height: 6vw;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 3vw;
+            cursor: pointer;
+        }
+        button.botonReservar:hover {
+            background-color: rgb(0, 0, 112);
+        }
+    } 
+}
+
+// Media para computadoras
+@media screen and (min-width: 992px) {
+    div.container-body {
+        display: flex;
+        width: 85%;
+        margin: 2vw auto 18vw auto;
+    
+        .mdc-data-table__header-cell {
+            font-weight: 600;
+            font-size: 1.3vw;
+            text-align: center;
+        }
+        .mdc-data-table__cell {
+            text-align: center;
+            font-size: 1.3vw;
+        }
+    
+        button.botonReservar {
+            background-color: rgb(0, 0, 172);
+            width: 8vw;
+            height: 2.3vw;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2vw;
+            cursor: pointer;
+        }
+        button.botonReservar:hover {
+            background-color: rgb(0, 0, 112);
+        }
     }
 }
