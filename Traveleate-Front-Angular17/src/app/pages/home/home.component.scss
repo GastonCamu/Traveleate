@@ -1,86 +1,183 @@
-div.container-body {
-    div.form {
-        border-radius: 2px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        height: 35vw;
-
-        background-image: url(..//..//..//assets/img/formFondo.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-
-        form {
+// Media para celulares
+@media screen and (max-width: 991px) {
+    div.container-body {
+        div.form {
             border-radius: 2px;
-            background-color: white;
-            width: 55%;
             display: flex;
             flex-direction: column;
-            margin: auto;
-            
-            h2 {
-                color: white;
-                padding: 0.5vw;
-                background-color: rgb(0, 0, 172);
-                font-size: 1.5vw;
-                width: 100%;
-                padding: 0.8vw 0 0.8vw 1vw;
-            }
-            div {
+            justify-content: center;
+            width: 100%;
+            height: 90vw;
+    
+            background-image: url(..//..//..//assets/img/formFondo.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+    
+            form {
+                border-radius: 2px;
+                background-color: white;
+                width: 55%;
                 display: flex;
+                flex-direction: column;
                 margin: auto;
-                justify-content: space-between;
-                align-items: baseline;
-                width: 90%;
-                padding: 0.8vw 0;
-
-                div.form-div {
+                
+                h2 {
+                    text-align: center;
+                    color: white;
+                    padding: 0.5vw;
+                    background-color: rgb(0, 0, 172);
+                    font-size: 4.5vw;
+                    width: 100%;
+                    padding: 0.8vw 0 0.8vw 1vw;
+                }
+                div {
                     display: flex;
                     flex-direction: column;
-                    margin: 0.3vw;
-                }
-                div.form-div-1 {
-                    
-                }
-                div.form-div-2 {
+                    margin: auto;
+                    justify-content: center;
+                    width: 100%;
+                    padding: 0.8vw 0;
     
-                }
-    
-                label {
-                    font-size: 1.4vw;
-                }
-                input {
-                    width: 14vw;
-                    height: 2.3vw;
-                    border: 1px solid rgba(0, 0, 0, 0.288);
-                    border-radius: 3px;
-                    margin: 0.5vw 0;
-                    padding: 0.5vw 0 0.5vw 0.5vw ;
-                    font-size: 1.2vw;
-                }
-                input:hover {
-                    outline: none;
-                }
-                input:focus {
-                    outline: none;
-                }
-                button {
-                    background-color: rgb(0, 0, 172);
-                    margin: 1.3vw;
-                    width: 14vw;
-                    height: 2.3vw;
-                    color: white;
-                    border: none;
-                    border-radius: 2px;
-                    font-size: 1.2vw;
-                    cursor: pointer;
-                }
-                button:hover {
-                    background-color: rgb(0, 0, 112);
+                    div.form-div {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        align-content: center;
+                        margin: 0.3vw;
+                    }
+                    div.form-div-1 {
+                        
+                    }
+                    div.form-div-2 {
+        
+                    }
+        
+                    label {
+                        font-size: 4vw;
+                    }
+                    input {
+                        width: 35vw;
+                        height: 5.5vw;
+                        border: 1px solid rgba(0, 0, 0, 0.288);
+                        border-radius: 3px;
+                        margin: 2vw 0;
+                        padding: 2vw 0 2vw 2vw ;
+                        font-size: 3vw;
+                    }
+                    input:hover {
+                        outline: none;
+                    }
+                    input:focus {
+                        outline: none;
+                    }
+                    button {
+                        background-color: rgb(0, 0, 172);
+                        margin: 1.3vw;
+                        width: 30vw;
+                        height: 5vw;
+                        color: white;
+                        border: none;
+                        border-radius: 2px;
+                        font-size: 3.1vw;
+                        cursor: pointer;
+                    }
+                    button:hover {
+                        background-color: rgb(0, 0, 112);
+                    }
                 }
             }
         }
     }
+}
+
+// Media para computadoras
+@media screen and (min-width: 992px) {
+    div.container-body {
+        div.form {
+            border-radius: 2px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: 35vw;
+    
+            background-image: url(..//..//..//assets/img/formFondo.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+    
+            form {
+                border-radius: 2px;
+                background-color: white;
+                width: 55%;
+                display: flex;
+                flex-direction: column;
+                margin: auto;
+                
+                h2 {
+                    color: white;
+                    padding: 0.5vw;
+                    background-color: rgb(0, 0, 172);
+                    font-size: 1.5vw;
+                    width: 100%;
+                    padding: 0.8vw 0 0.8vw 1vw;
+                }
+                div {
+                    display: flex;
+                    margin: auto;
+                    justify-content: space-between;
+                    align-items: baseline;
+                    width: 90%;
+                    padding: 0.8vw 0;
+    
+                    div.form-div {
+                        display: flex;
+                        flex-direction: column;
+                        margin: 0.3vw;
+                    }
+                    div.form-div-1 {
+                        
+                    }
+                    div.form-div-2 {
+        
+                    }
+        
+                    label {
+                        font-size: 1.4vw;
+                    }
+                    input {
+                        width: 14vw;
+                        height: 2.3vw;
+                        border: 1px solid rgba(0, 0, 0, 0.288);
+                        border-radius: 3px;
+                        margin: 0.5vw 0;
+                        padding: 0.5vw 0 0.5vw 0.5vw ;
+                        font-size: 1.2vw;
+                    }
+                    input:hover {
+                        outline: none;
+                    }
+                    input:focus {
+                        outline: none;
+                    }
+                    button {
+                        background-color: rgb(0, 0, 172);
+                        margin: 1.3vw;
+                        width: 14vw;
+                        height: 2.3vw;
+                        color: white;
+                        border: none;
+                        border-radius: 2px;
+                        font-size: 1.2vw;
+                        cursor: pointer;
+                    }
+                    button:hover {
+                        background-color: rgb(0, 0, 112);
+                    }
+                }
+            }
+        }
+    }  
 }

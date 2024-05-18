@@ -1,137 +1,257 @@
-@keyframes h1-anime {
-    50% {
-        color: white;
-        background-color: black;
+// Media para celulares
+@media screen and (max-width: 991px) {
+    @keyframes h1-anime {
+        50% {
+            color: white;
+            background-color: black;
+        }
+        75% {
+            color: white;
+            background-color: black;  
+        }
     }
-    75% {
-        color: white;
-        background-color: black;  
-    }
-}
-
-@keyframes camino-anime {
-    50% {
-        translate: 1vw 0 0;
-    }
-}
-
-div.container-body {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(231, 231, 231);
-    h1 {
-        font-size: 4vw;
-        padding: 1vw;
+    
+    div.container-body {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0.5vw auto;
-        text-align: center;
-        animation: h1-anime infinite 4s forwards;
-        border-radius: 3px;
-    }
-    h2.container-body-title-2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0.1vw 1vw;
-        margin: 1vw auto;
-        text-align: center;
-        border: 4px solid black;
-        border-radius: 100px;
-        background-color: white;
-    }
-    div.camino {
-        display: flex;
-        width: 100%;
-        border-top: 10px dashed black;
-        margin-bottom: 1vw; 
-        animation: camino-anime infinite 3s;
-    }
-    div.container-info {
-
-        div.div-introduccion {
+        flex-direction: column;
+        background-color: #e7e7e7;
+        h1 {
+            font-size: 9vw;
+            padding: 1vw;
             display: flex;
-            background-image: url(..//..//..//assets/img/bus1.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            width: 100%;
-            height: 30vw;
-            border: transparent;
-            margin: auto;
-            p {
-                width: 80%;
+            justify-content: center;
+            align-items: center;
+            margin: 5vw auto;
+            text-align: center;
+            animation: h1-anime infinite 4s forwards;
+            border-radius: 3px;
+        }
+        h2.container-body-title-2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.1vw 1vw;
+            margin: 2vw auto 5vw auto;
+            text-align: center;
+            border: 4px solid black;
+            border-radius: 100px;
+            background-color: white;
+            font-size: 7vw;
+        }
+        div.container-info {
+    
+            div.div-introduccion {
+                display: flex;
+                background-image: url(..//..//..//assets/img/bus1.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: bottom;
+                width: 100%;
+                height: 50vw;
+                border: transparent;
                 margin: auto;
-                text-align: center;
-                background-color: rgb(77, 77, 77);
-                padding: 1vw;
-                border-radius: 10px;
-                color: white;
-                font-size: 1.5vw;
-                span {
-                    font-weight: 600;
+                p {
+                    width: 90%;
+                    margin: auto;
+                    text-align: center;
+                    background-color: rgb(77, 77, 77);
+                    padding: 1vw;
+                    border-radius: 10px;
+                    color: white;
+                    font-size: 3vw;
+                    span {
+                        font-weight: 600;
+                    }
+                }
+            }
+            
+            div.div-mision {
+                display: flex;
+                align-items: center;
+                background-image: url(..//..//..//assets/img/bus2.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 100%;
+                height: 50vw;
+                margin: 4vw auto;
+                border: transparent;
+                p {
+                    width: 90%;
+                    text-align: center;
+                    margin: 2vw auto;
+                    background-color: rgb(255, 255, 255);
+                    padding: 1vw;
+                    color: rgb(0, 0, 0);
+                    border-radius: 10px;
+                    font-size: 3vw;
+                    span {
+                        font-weight: 600;
+                    }
+                }
+            }
+            div.div-lista {
+                h3.div-lista-title {
+                    width: 100%;
+                    text-align: center;
+                    font-size: 6vw;
+                }
+            }
+            div.div-cierre {
+                display: flex;
+                align-items: center;
+                background-image: url(..//..//..//assets/img/bus3.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 100%;
+                height: 50vw;
+                margin: 2vw auto 2vw auto;
+                border: transparent;
+                p {
+                    width: 90%;
+                    text-align: center;
+                    margin: 2vw auto;
+                    background-color: rgb(59, 59, 59);
+                    padding: 1vw;
+                    color: rgb(255, 255, 255);
+                    border-radius: 10px;
+                    font-size: 3vw;
+                    span {
+                        font-weight: 600;
+                    }
                 }
             }
         }
         
-        div.div-mision {
-            display: flex;
-            align-items: center;
-            background-image: url(..//..//..//assets/img/bus2.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            width: 100%;
-            height: 30vw;
-            margin: 2vw auto;
-            border: transparent;
-            p {
-                width: 80%;
-                text-align: center;
-                margin: 2vw auto;
-                background-color: rgb(255, 255, 255);
-                padding: 1vw;
-                color: rgb(0, 0, 0);
-                border-radius: 10px;
-                font-size: 1.6vw;
-                span {
-                    font-weight: 600;
-                }
-            }
+    }
+}
+
+// Media para computadoras
+@media screen and (min-width: 992px) {
+    @keyframes h1-anime {
+        50% {
+            color: white;
+            background-color: black;
         }
-        div.div-lista {
-            h3.div-lista-title {
-                width: 100%;
-                text-align: center;
-                font-size: 2.5vw;
-            }
-        }
-        div.div-cierre {
-            display: flex;
-            align-items: center;
-            background-image: url(..//..//..//assets/img/bus3.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            width: 100%;
-            height: 30vw;
-            margin: 2vw auto 2vw auto;
-            border: transparent;
-            p {
-                width: 80%;
-                text-align: center;
-                margin: 2vw auto;
-                background-color: rgb(59, 59, 59);
-                padding: 1vw;
-                color: rgb(255, 255, 255);
-                border-radius: 10px;
-                font-size: 1.6vw;
-                span {
-                    font-weight: 600;
-                }
-            }
+        75% {
+            color: white;
+            background-color: black;  
         }
     }
     
+    div.container-body {
+        display: flex;
+        flex-direction: column;
+        background-color: #e7e7e7;
+        h1 {
+            font-size: 4vw;
+            padding: 1vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 3vw auto;
+            text-align: center;
+            animation: h1-anime infinite 4s forwards;
+            border-radius: 3px;
+        }
+        h2.container-body-title-2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.1vw 1vw;
+            margin: 1vw auto 3vw auto;
+            text-align: center;
+            border: 4px solid black;
+            border-radius: 100px;
+            background-color: white;
+            font-size: 3.3vw;
+        }
+        div.container-info {
+    
+            div.div-introduccion {
+                display: flex;
+                background-image: url(..//..//..//assets/img/bus1.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 100%;
+                height: 30vw;
+                border: transparent;
+                margin: auto;
+                p {
+                    width: 80%;
+                    margin: auto;
+                    text-align: center;
+                    background-color: rgb(77, 77, 77);
+                    padding: 1vw;
+                    border-radius: 10px;
+                    color: white;
+                    font-size: 1.5vw;
+                    span {
+                        font-weight: 600;
+                    }
+                }
+            }
+            
+            div.div-mision {
+                display: flex;
+                align-items: center;
+                background-image: url(..//..//..//assets/img/bus2.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 100%;
+                height: 30vw;
+                margin: 2vw auto;
+                border: transparent;
+                p {
+                    width: 80%;
+                    text-align: center;
+                    margin: 2vw auto;
+                    background-color: rgb(255, 255, 255);
+                    padding: 1vw;
+                    color: rgb(0, 0, 0);
+                    border-radius: 10px;
+                    font-size: 1.6vw;
+                    span {
+                        font-weight: 600;
+                    }
+                }
+            }
+            div.div-lista {
+                h3.div-lista-title {
+                    width: 100%;
+                    text-align: center;
+                    font-size: 2.5vw;
+                }
+            }
+            div.div-cierre {
+                display: flex;
+                align-items: center;
+                background-image: url(..//..//..//assets/img/bus3.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 100%;
+                height: 30vw;
+                margin: 2vw auto 2vw auto;
+                border: transparent;
+                p {
+                    width: 80%;
+                    text-align: center;
+                    margin: 2vw auto;
+                    background-color: rgb(59, 59, 59);
+                    padding: 1vw;
+                    color: rgb(255, 255, 255);
+                    border-radius: 10px;
+                    font-size: 1.6vw;
+                    span {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+        
+    }
 }
