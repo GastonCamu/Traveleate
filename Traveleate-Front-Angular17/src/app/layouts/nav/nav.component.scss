@@ -3,8 +3,17 @@
     nav {
         div.container-fluid {
             a.navbar-brand{
+                display: flex;
                 font-size: 7vw;
                 font-weight: 500;
+                align-items: center;
+
+                img {
+                   pointer-events: none;
+                   width: 10vw;
+                   height: 10vw; 
+                   margin-right: 1vw;
+                }
             }
         }
         div.div-elements {
@@ -28,8 +37,17 @@
     nav {
         div.container-fluid {
             a.navbar-brand{
+                display: flex;
+                align-items: center;
                 font-size: 2.5vw;
                 font-weight: 500;
+
+                img {
+                    margin-right: 0.5vw;
+                    width: 3vw;
+                    height: 3vw;
+                    pointer-events: none;
+                }
             }
         }
         div.div-elements {
@@ -37,7 +55,7 @@
             align-items: center;
             div {
                 a {
-                    font-size: 1.8vw;
+                    font-size: 1.7vw;
                     font-weight: 400;
                     color: black;
                 }
