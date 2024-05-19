@@ -1,19 +1,47 @@
-nav {
-    div.container-fluid {
-        a.navbar-brand{
-            font-size: 2vw;
-            font-weight: 500;
-        }
-    }
-    div.div-elements {
-        justify-content: space-between;
-        align-items: center;
-        div {
-            a {
-                font-size: 1.5vw;
+// Media para celulares
+@media screen and (max-width: 991px) {
+    nav {
+        div.container-fluid {
+            a.navbar-brand{
+                font-size: 7vw;
                 font-weight: 500;
-                color: black;
             }
         }
-    }
+        div.div-elements {
+            justify-content: space-between;
+            align-items: center;
+            div {
+                border-bottom: 1px solid rgb(170, 170, 170);
+                a {
+                    margin: auto;
+                    font-size: 5vw;
+                    font-weight: 400;
+                    color: black;
+                }
+            }
+        }
+    } 
+}
+
+// Media para computadoras
+@media screen and (min-width: 992px) {
+    nav {
+        div.container-fluid {
+            a.navbar-brand{
+                font-size: 2.5vw;
+                font-weight: 500;
+            }
+        }
+        div.div-elements {
+            justify-content: space-between;
+            align-items: center;
+            div {
+                a {
+                    font-size: 1.8vw;
+                    font-weight: 400;
+                    color: black;
+                }
+            }
+        }
+    }   
 }
