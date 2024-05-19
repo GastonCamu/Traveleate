@@ -9,6 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { NavComponent } from '../../layouts/nav/nav.component';
 import { FooterComponent } from '../../layouts/footer/footer.component';
 import { SignalsService } from '../../services/signals.service';
+import { Alertas } from '../../utilities/alertas';
 
 
 @Component({
@@ -26,6 +27,7 @@ export class ViajesComponent implements OnInit {
 
   private viajeServicio = inject(ViajeService);
   private signalsService = inject(SignalsService);
+  private alertas = new Alertas()
   public listaViajes:IViaje[] = [];
   displayedColumns: string[] = ['localidadOrigen', 'localidadDestino', 'hora','fecha', 'idColectivo','accion'];
 
@@ -33,6 +35,10 @@ export class ViajesComponent implements OnInit {
     this.viajeServicio.obtenerViajes(this.localidadOrigen,this.localidadDestino,this.fecha).subscribe({
       next:(res)=>{
         this.listaViajes = res.data;
+        if(this.listaViajes.length == 0){
+          this.alertas.alertaSinResultadosViajes();
+          this.router.navigate(['/']);
+        }
       },
       error:(err)=>{
         console.log(err.message);

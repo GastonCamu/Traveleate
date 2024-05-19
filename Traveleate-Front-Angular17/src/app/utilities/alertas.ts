@@ -31,6 +31,16 @@ export class Alertas {
           })
     }
 
+    alertaSinResultadosViajes() {
+        Swal.fire({
+            title: 'Error',
+            text: 'No hay viajes disponibles, intente con otra fecha',
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#0000ac'
+          })
+    }
+
     alertaButacaOcupada() {
         Swal.fire({
             title: 'Error',
@@ -50,6 +60,5 @@ export class Alertas {
             confirmButtonColor: '#0000ac'
           })
     }
-
 
 }
