@@ -9,6 +9,7 @@ import { ICategoriaButaca } from '../../models/categoriaButaca';
 import { ViajeService } from '../../services/viaje.service';
 import { IViaje } from '../../models/viaje';
 import { SignalsService } from '../../services/signals.service';
+import { Alertas } from '../../utilities/alertas';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class PreReservaComponent{
   private catButacaService = inject(CategoriaButacaService);
   private viajeService = inject(ViajeService);
   private signalsService = inject(SignalsService);
-
+  private alertas = new Alertas();
   viaje! : IViaje;
   totalButacas! : number;
   butacas: IButaca[] = [];
@@ -49,7 +50,7 @@ export class PreReservaComponent{
   
   obtenerCantButacas() {
     if (this.signalsService.idColectivo() == 0) {
-      alert("Ups, algo salió mal, inténtelo de nuevo")
+      this.alertas.alertaError();
       this.router.navigate(['/']);
     }
     this.colectivoService.obtenerCantButacas(this.signalsService.idColectivo()).subscribe({
@@ -95,7 +96,7 @@ export class PreReservaComponent{
 
   enviarReserva() {
     if (this.butacaSeleccionada == 0) {
-      alert("Debe seleccionar una butaca")
+      this.alertas.alertaFaltaButaca();
     }
     else {
       this.viajeService.obtenerButacasReservadas(this.signalsService.idViaje()).subscribe({
@@ -108,7 +109,7 @@ export class PreReservaComponent{
       complete:()=>{
         this.validacionReserva(this.butacaSeleccionada);
         if (this.coincidencia) {
-          alert("La butaca ya fue reservada");
+          this.alertas.alertaButacaOcupada();
           this.router.navigate(['/']);
         }
         else {

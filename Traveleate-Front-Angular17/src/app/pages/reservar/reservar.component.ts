@@ -9,6 +9,7 @@ import { ViajeService } from '../../services/viaje.service';
 import { SignalsService } from '../../services/signals.service';
 import { FooterComponent } from "../../layouts/footer/footer.component";
 import { NavComponent } from "../../layouts/nav/nav.component";
+import { Alertas } from '../../utilities/alertas';
 
 @Component({
     selector: 'app-reservar',
@@ -22,6 +23,7 @@ export class ReservarComponent implements OnInit{
   private reservarService = inject(ReservaService);
   private viajeService = inject(ViajeService);
   private signalsService = inject(SignalsService);
+  private alertas = new Alertas();
 
   precioTotal! : number;
 
@@ -48,12 +50,12 @@ export class ReservarComponent implements OnInit{
       precioTotal: this.precioTotal
     }
     if (reserva.idViaje == 0 || reserva.idButaca == 0) {
-      alert("Ups, algo salió mal, inténtelo de nuevo");
+      this.alertas.alertaError();
       this.router.navigate(["/"]);
     }
     else {
       if (reserva.nombreCliente == '' || reserva.apellidoCliente == '' || reserva.dniCliente == '') {
-        alert("Por favor complete todos los campos");
+        this.alertas.alertaCamposIncompletos();
       }
       else {
         this.reservarService.enviarReserva(reserva).subscribe({
@@ -64,7 +66,7 @@ export class ReservarComponent implements OnInit{
             console.log(err.message);
           },
           complete:()=>{
-            alert("Reserva realizada con exito");
+            this.alertas.alertaReservado();
             this.router.navigate(["/"])
           }
         });

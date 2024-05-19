@@ -11,6 +11,8 @@ import { Observable } from 'rxjs';
 import {MatButtonModule} from '@angular/material/button';
 import { NavComponent } from '../../layouts/nav/nav.component';
 import { FooterComponent } from '../../layouts/footer/footer.component';
+import { Alertas } from '../../utilities/alertas';
+
 
 @Component({
   selector: 'app-home',
@@ -21,8 +23,7 @@ import { FooterComponent } from '../../layouts/footer/footer.component';
     ReactiveFormsModule,
     AsyncPipe,
     NavComponent,
-    FooterComponent
-    
+    FooterComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -34,7 +35,7 @@ export class HomeComponent {
   public nombresLocalidades: string[] = [];
   control = new FormControl('');
   filteredStreets?: Observable<string[]>;
-  
+  alerta = new Alertas();
   obtenerLocalidades() {
     this.localidadService.obtenerLocalidades().subscribe({
       next:(res)=>{
@@ -59,7 +60,7 @@ export class HomeComponent {
 
   buscar(localidadDestino:string,localidadOrigen:string, fecha:string) {
     if(localidadOrigen == '' || localidadDestino == '' || fecha == ''){
-      alert("Debe rellenar todos los campos");
+      this.alerta.alertaCamposIncompletos();
     }
     else {
       this.router.navigate(['/viajes', localidadOrigen, localidadDestino, fecha]);
