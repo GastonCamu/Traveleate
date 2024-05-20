@@ -140,7 +140,7 @@ namespace Traveleate_Back_C_.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdViaje"));
 
-                    b.Property<string>("ButacaReservadas")
+                    b.Property<string>("ButacasReservadas")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

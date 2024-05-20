@@ -18,7 +18,7 @@ namespace Traveleate_Back_C_.Models
         [ForeignKey("Colectivo")]
         public int IdColectivo { get; set; }
 
-        public int[]ButacaReservadas { get; set; }
+        public int[] ButacasReservadas { get; set; }
 
         public int Precio { get; set; }
     }

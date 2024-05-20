@@ -37,7 +37,7 @@ namespace Traveleate_Back_C_.Controllers
                     Fecha = viaje.Fecha,
                     IdColectivo = viaje.IdColectivo,
                     PrecioViaje = viaje.Precio,
-                    ButacasReservadas = viaje.ButacaReservadas
+                    ButacasReservadas = viaje.ButacasReservadas
                 };
 
                 _response.Data = viajeConNombres;
@@ -64,7 +64,7 @@ namespace Traveleate_Back_C_.Controllers
                     v.IdLocalidadOrigen == localidadOrigenEntity.IdLocalidad &&
                     v.IdLocalidadDestino == localidadDestinoEntity.IdLocalidad &&
                     v.Fecha.Date == fecha.Date &&
-                    v.ButacaReservadas.Length < 30
+                    v.ButacasReservadas.Length < 30
                 )
                 .OrderBy(v => v.Fecha)
                 .Select(v => new
@@ -95,7 +95,7 @@ namespace Traveleate_Back_C_.Controllers
             try
             {
                 var viaje = _context.Viajes.FirstOrDefault(v => v.IdViaje == idViaje);
-                var butacasReservadas = viaje.ButacaReservadas;
+                var butacasReservadas = viaje.ButacasReservadas;
 
                 _response.Data = butacasReservadas;
             }
@@ -121,9 +121,9 @@ namespace Traveleate_Back_C_.Controllers
                 else
                 {
                     var viaje = _context.Viajes.FirstOrDefault(v => v.IdViaje == idViaje);
-                    var butacas = viaje.ButacaReservadas != null ? viaje.ButacaReservadas.ToList() : new List<int>();
+                    var butacas = viaje.ButacasReservadas != null ? viaje.ButacasReservadas.ToList() : new List<int>();
                     butacas.Add(numeroButaca);
-                    viaje.ButacaReservadas = butacas.ToArray();
+                    viaje.ButacasReservadas = butacas.ToArray();
                     _context.SaveChanges();
                 }
             }
