@@ -27,9 +27,11 @@
             display: flex;
             justify-content: space-around;
             align-self: stretch;
+            flex-wrap: wrap;
             p {
                 font-size: 4vw;
                 font-weight: 500;
+                margin: 1vw 3vw;
     
                 span {
                     font-weight: 600;
@@ -68,6 +70,7 @@
                 cursor: pointer;
                 background-color: rgba(96, 255, 96, 0.733);
                 transition: width 500ms, height 500ms;
+                color: black;
     
                 font-weight: 600;
                 font-size: 4vw;
@@ -82,7 +85,7 @@
                     pointer-events: none;
                 }
             }
-            button:focus {
+            button:hover {
                 border: 3px solid black;
             }
             button.reservada {
@@ -136,15 +139,16 @@
         width: 100%;
         justify-content: space-around;
         background-color: white;
+        padding-bottom: 7vw;
     
         button {
             margin: 1vw;
             width: 45%;
-            height: 8vw;
+            height: 10vw;
             border: 1px solid rgb(0, 0, 172);
             border-radius: 10px;
             cursor: pointer;
-            font-size: 4vw;
+            font-size: 5vw;
             background-color: white;
         }
         button.btn-volver {
